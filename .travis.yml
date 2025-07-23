@@ -5,7 +5,7 @@ jobs:
       dist: focal                    
       vm:                            
         create:                     
-          name: my_custom_name_2     
+          name: my_custom_name_3     
       before_install:                
         - sudo apt-get -y install libxml2-dev
       addons:
@@ -14,7 +14,7 @@ jobs:
 
     - stage: use custom image       
       vm:
-        use: my_custom_name_2       
+        use: my_custom_name_3       
       script:
         # Add your script commands here (e.g., test scripts, build commands, etc.)
         - echo "OK8"
