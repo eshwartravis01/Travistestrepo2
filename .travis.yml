@@ -5,7 +5,7 @@ jobs:
       dist: focal
       vm:  # existing key
         create:
-          name: my_custom_name_2
+          name: naruto_image
       before_install:
         - sudo apt-get -y install libxml2-dev
       addons:
