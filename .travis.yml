@@ -3,7 +3,7 @@ jobs:
     - stage: create image
       os: linux
       dist: focal
-      vm: # existing key
+      vm:  # existing key
         create:
           name: my_custom_name_2
       before_install:
@@ -11,9 +11,5 @@ jobs:
       addons:
         apt:
           update: true
-
-    - stage: use custom image
-      vm: # existing key
-        use: my_custom_name_2
       script:
-        # Add your script commands here
+        - echo "OK8"
