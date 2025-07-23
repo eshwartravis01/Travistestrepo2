@@ -1,0 +1,17 @@
+jobs:
+include:
+- stage: create image
+os: linux
+dist: focal
+vm: #existing key
+create:
+name: my_custom_name
+before_install:
+- sudo apt-get -y install libxml2-dev
+addons:
+apt:
+update: true
+- stage: use custom image
+vm: #existing key
+use: my_custom_name
+script:
