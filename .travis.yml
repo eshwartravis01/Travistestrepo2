@@ -1,15 +1,21 @@
 jobs:
   include:
-    - stage: create image
-      os: linux
-      dist: focal
-      vm:  # existing key
-        create:
-          name: naruto_image
-      before_install:
+    - stage: create image            
+      os: linux                      
+      dist: focal                    
+      vm:                            
+        create:                     
+          name: my_custom_name_2     
+      before_install:                
         - sudo apt-get -y install libxml2-dev
       addons:
         apt:
-          update: true
+          update: true              
+
+    - stage: use custom image       
+      vm:
+        use: my_custom_name_2       
       script:
+        # Add your script commands here (e.g., test scripts, build commands, etc.)
         - echo "OK8"
+        - node app.js
